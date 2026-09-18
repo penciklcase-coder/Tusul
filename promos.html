@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Онцгой Урамшуулал - Түргэн Хазалт</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 text-2xl font-black text-red-600">
+        <i class="fa-solid fa-burger text-3xl"></i>
+        <span>FAST<span class="text-amber-500">BITES</span></span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8 font-semibold text-gray-600">
+        <a href="index.html" class="hover:text-red-600 transition">Нүүр</a>
+        <a href="menu.html" class="hover:text-red-600 transition">Цэс</a>
+        <a href="promos.html" class="text-red-600 font-bold transition">Урамшуулал</a>
+        <a href="about.html" class="hover:text-red-600 transition">Бидний тухай</a>
+      </nav>
+
+      <!-- Action Button -->
+      <a href="index.html#menu" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-bold transition shadow-lg shadow-red-200">
+        <i class="fa-solid fa-utensils"></i>
+        <span>Хоол Захиалах</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-r from-red-600 via-amber-500 to-red-600 text-white py-14 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-3">
+        <i class="fa-solid fa-fire text-amber-300 mr-1"></i> ХЯЗГААРТАЙ ХУГАЦАА
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-black">Онцгой Урамшуулал & Сонгодог Хямдрал</h1>
+      <p class="mt-4 text-red-100 text-lg max-w-2xl mx-auto">
+        Амттай хоолыг хамгийн хямд үнээр аваарай. Өнөөдөр идэвхтэй байгаа урамшууллуудтай танилцана уу!
+      </p>
+    </div>
+  </section>
+
+  <!-- Promos Grid Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 flex-grow space-y-12">
+    
+    <!-- Big Featured Promo Banner -->
+    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden grid lg:grid-cols-2">
+      <div class="p-8 sm:p-12 flex flex-col justify-center">
+        <span class="text-red-600 font-extrabold text-sm uppercase tracking-wider mb-2">Өдрийн онцлох хямдрал</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 leading-tight mb-4">Бургер Сет + Үнэгүй Кола 0.5L</h2>
+        <p class="text-gray-600 mb-6">Аливаа хоёр бургер захиалбал 0.5L Кока Кола ундаа болон шарсан төмсийг 50% хямдралтай аваарай.</p>
+        
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-amber-100 text-amber-800 px-4 py-2 rounded-xl font-bold border border-amber-200 text-sm">
+            Код: <span class="text-red-600 font-extrabold">FASTBURGER</span>
+          </div>
+          <span class="text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> Өнөөдөр дуусна</span>
+        </div>
+
+        <div>
+          <a href="index.html#menu" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-3.5 rounded-full transition shadow-lg shadow-red-200">
+            Одоо Ашиглах
+          </a>
+        </div>
+      </div>
+      <div class="relative min-h-[280px]">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Special Burger Combo" class="absolute inset-0 w-full h-full object-cover">
+      </div>
+    </div>
+
+    <!-- Active Promos List -->
+    <div>
+      <h3 class="text-2xl font-extrabold text-gray-900 mb-6 flex items-center gap-2">
+        <i class="fa-solid fa-tag text-red-600"></i> Идэвхтэй урамшууллууд
+      </h3>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Promo Card 1 -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80" alt="Wings Combo" class="w-full h-44 object-cover">
+              <span class="absolute top-3 right-3 bg-red-600 text-white text-xs font-black px-3 py-1.5 rounded-full shadow">
+                -20% ХЯМДРАЛ
+              </span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-lg text-gray-900 mb-2">Шаржигнуур Тахианы Вечер</h4>
+              <p class="text-gray-500 text-sm mb-4">6ш Шаржигнуур далавч + Тахианы страйпс (4ш) цугтаа ердөө 21,200₮ (Үндсэн үнэ 26,500₮)</p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="index.html#menu" class="block text-center bg-gray-100 hover:bg-red-600 hover:text-white text-gray-800 font-bold py-2.5 rounded-xl transition">
+              Захиалах
+            </a>
+          </div>
+        </div>
+
+        <!-- Promo Card 2 -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition">
+          <div>
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=500&q=80" alt="Free Delivery" class="w-full h-44 object-cover">
+              <span class="absolute top-3 right-3 bg-amber-400 text-red-950 text-xs font-black px-3 py-1.5 rounded-full shadow">
+                ҮНЭГҮЙ ХҮРГЭЛТ
+              </span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-lg text-gray-900 mb-2">35,000₮-с дээш үнэгүй хүргэлт</h4>
+              <p class="text-gray-500 text-sm mb-4">Таны нийт захиалгын дүн 35,000₮-өөс давсан тохиолдолд хүргэлтийн 4,000₮ шууд хасагдана.</p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="index.html#menu" class="block text-center bg-gray-100 hover:bg-red-600 hover:text-white text-gray-800 font-bold py-2.5 rounded-xl transition">
+              Цэс рүү очих
+            </a>
+          </div>
+        </div>
+
+        <!-- Promo Card 3 -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-lg transition sm:col-span-2 lg:col-span-1">
+          <div>
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Family Combo" class="w-full h-44 object-cover">
+              <span class="absolute top-3 right-3 bg-green-600 text-white text-xs font-black px-3 py-1.5 rounded-full shadow">
+                БОНУС
+              </span>
+            </div>
+            <div class="p-5">
+              <h4 class="font-bold text-lg text-gray-900 mb-2">Гэр бүлийн Сет урамшуулал</h4>
+              <p class="text-gray-500 text-sm mb-4">Бүх төрлийн бургер болон тахианы багц захиалганд 2L ундаа бэлгэнд дагалдана.</p>
+            </div>
+          </div>
+          <div class="p-5 pt-0">
+            <a href="index.html#menu" class="block text-center bg-gray-100 hover:bg-red-600 hover:text-white text-gray-800 font-bold py-2.5 rounded-xl transition">
+              Захиалах
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-10 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="font-bold text-white text-lg mb-2">FASTBITES Food Delivery</p>
+      <p class="text-sm">© 2026 Онлайн хоол захиалгын систем. Лабораторийн ажилд зориулав.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

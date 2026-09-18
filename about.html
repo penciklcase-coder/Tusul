@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бидний тухай - Түргэн Хазалт</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-2xl font-black text-red-600">
+        <i class="fa-solid fa-burger text-3xl"></i>
+        <span>Түргэн <span class="text-amber-500">Хазалт</span></span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8 font-semibold text-gray-600">
+        <a href="index.html" class="hover:text-red-600 transition">Нүүр</a>
+        <a href="menu.html" class="hover:text-red-600 transition">Цэс</a>
+        <a href="promos.html" class="hover:text-red-600 transition">Урамшуулал</a>
+        <a href="about.html" class="text-red-600 font-bold transition">Бидний тухай</a>
+      </nav>
+
+      <!-- Action Button -->
+      <a href="index.html#menu" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-bold transition shadow-lg shadow-red-200">
+        <i class="fa-solid fa-utensils"></i>
+        <span>Хоол Захиалах</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-red-600 to-amber-500 text-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="bg-white/20 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">БҮТЭЭН БАЙГУУЛАЛТ & ТҮҮХ</span>
+      <h1 class="text-4xl sm:text-5xl font-black mt-4">Халуухан, Амттай, Түргэн Шуурхай!</h1>
+      <p class="mt-4 text-red-100 text-lg max-w-2xl mx-auto">
+        Бид таны дуртай амтыг цаг алдалгүй, хамгийн шинэлэг байдлаар халуунаар нь хүргэхийг зорьдог.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story & Mission Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow space-y-16">
+    
+    <!-- Intro / Grid -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Бид хэн бэ?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          <strong>Түргэн Хазалт</strong> нь 2026 онд үүсгэн байгуулагдсан бөгөөд хотын иргэдэд чанартай, амттай түргэн хоолыг 30 минутын дотор найдвартай хүргэж өгөх зорилготой онлайн хоол хүргэлтийн платформ юм.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Бид хоолны орц бүрийг өдөр бүр шинээр нь сонгон шалгаруулж, мэргэжлийн шеф тогооч нарын жороор бэлтгэдэг. Таны захиалсан хоол бүр халуун хэвээрээ таны гар дээр очих болно.
+        </p>
+      </div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Restaurant Kitchen" class="rounded-2xl shadow-xl w-full h-80 object-cover">
+        <div class="absolute -bottom-6 -left-6 bg-amber-400 text-red-950 p-4 rounded-xl shadow-lg hidden sm:block">
+          <p class="text-2xl font-black">30 Минут</p>
+          <p class="text-xs font-bold uppercase tracking-wider">Шуурхай Хүргэлт</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features / Why Choose Us -->
+    <div>
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-extrabold text-gray-900">Яагаад FastBites гэж?</h2>
+        <p class="text-gray-500 mt-2">Бид танд зөвхөн хоол биш, амтат мэдрэмж болон цаг хугацааг бэлэглэнэ.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center">
+          <div class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">100% Шинэ Орц</h3>
+          <p class="text-gray-600 text-sm">Өдөр бүр шинээр бэлтгэсэн мах, хүнсний ногоо болон гараар хийсэн тусгай сүмсүүд.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center">
+          <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            <i class="fa-solid fa-motorcycle"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Түргэн Хүргэлт</h3>
+          <p class="text-gray-600 text-sm">Тусгай дулаан хадгалагч цүнхээр хоолыг хөрөхөөс нь өмнө халуунаар нь хүргэнэ.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition text-center sm:col-span-2 lg:col-span-1">
+          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            <i class="fa-solid fa-smile"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Сэтгэл Ханамж</h3>
+          <p class="text-gray-600 text-sm">Хэрэглэгчдийн ая тух, сэтгэл ханамжийг бид үргэлж хамгийн эхэнд тавьдаг.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div class="bg-gray-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl">
+      <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+        <div class="flex flex-col items-center md:items-start">
+          <i class="fa-solid fa-location-dot text-amber-400 text-3xl mb-3"></i>
+          <h4 class="font-bold text-lg">Байршил</h4>
+          <p class="text-gray-400 text-sm mt-1">Улаанбаатар хот, Сүхбаатар дүүрэг, 1-р хороо</p>
+        </div>
+        <div class="flex flex-col items-center md:items-start">
+          <i class="fa-solid fa-phone text-amber-400 text-3xl mb-3"></i>
+          <h4 class="font-bold text-lg">Холбоо барих</h4>
+          <p class="text-gray-400 text-sm mt-1">+976 7711-2233</p>
+          <p class="text-gray-400 text-sm">info@fastbites.mn</p>
+        </div>
+        <div class="flex flex-col items-center md:items-start">
+          <i class="fa-solid fa-clock text-amber-400 text-3xl mb-3"></i>
+          <h4 class="font-bold text-lg">Цагийн хуваарь</h4>
+          <p class="text-gray-400 text-sm mt-1">Даваа - Ням: 10:00 - 23:00</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-10 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="font-bold text-white text-lg mb-2">FASTBITES Food Delivery</p>
+      <p class="text-sm">© 2026 Онлайн хоол захиалгын систем. Лабораторийн ажилд зориулав.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
