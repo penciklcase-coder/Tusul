@@ -8,10 +8,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-  </style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
@@ -73,7 +71,7 @@
 
     <!-- Dynamic Food Grid -->
     <div id="food-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- JS Rendered Content -->
+      <!-- JavaScript dwara ahara padarthalu ikkada render avuthayi -->
     </div>
   </main>
 
@@ -148,815 +146,820 @@
   <!-- Menu JavaScript (100 Verified Items) -->
   <script>
     const foods = [
-  {
-    "id": 1,
-    "name": "Сонгодог Чизбургер",
-    "category": "burger",
-    "price": 12500,
-    "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
-    "desc": "Үхрийн махан котлет, бяслаг, тусгай сүмс"
-  },
-  {
-    "id": 2,
-    "name": "Давхар Махтай Бургер",
-    "category": "burger",
-    "price": 16900,
-    "img": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=500&q=80",
-    "desc": "Давхар үхрийн мах, давхар бяслаг, өргөст хэмх"
-  },
-  {
-    "id": 3,
-    "name": "Халуун Ногоотой Чили Бургер",
-    "category": "burger",
-    "price": 14500,
-    "img": "https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=500&q=80",
-    "desc": "Халуун чили сүмс, халапеньо чинжүү"
-  },
-  {
-    "id": 4,
-    "name": "BBQ Бейкон Бургер",
-    "category": "burger",
-    "price": 15900,
-    "img": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шарж амталсан бейкон, BBQ сүмс"
-  },
-  {
-    "id": 5,
-    "name": "Мөөгтэй Швейц Бургер",
-    "category": "burger",
-    "price": 16500,
-    "img": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шантрэл мөөг, швейцар бяслаг"
-  },
-  {
-    "id": 6,
-    "name": "Авокадо Веган Бургер",
-    "category": "burger",
-    "price": 14000,
-    "img": "https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&w=500&q=80",
-    "desc": "Ургамлын котлет, авокадо, салат навч"
-  },
-  {
-    "id": 7,
-    "name": "Гавайн Ананастай Бургер",
-    "category": "burger",
-    "price": 15000,
-    "img": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80",
-    "desc": "Гриллдэж амталсан ананас, үхрийн мах"
-  },
-  {
-    "id": 8,
-    "name": "Triple Деラックス Бургер",
-    "category": "burger",
-    "price": 19900,
-    "img": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f6?auto=format&fit=crop&w=500&q=80",
-    "desc": "3 давхар үхрийн махан котлет, чеддар"
-  },
-  {
-    "id": 9,
-    "name": "Шарсан Төмс (L)",
-    "category": "burger",
-    "price": 6500,
-    "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80",
-    "desc": "Амталсан шаржигнуур шарсан төмс"
-  },
-  {
-    "id": 10,
-    "name": "Сонгины Цагираг",
-    "category": "burger",
-    "price": 7500,
-    "img": "https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=80",
-    "desc": "Амталж шарсан шаржигнуур сонгино"
-  },
-  {
-    "id": 11,
-    "name": "Бяслагтай Шарсан Төмс",
-    "category": "burger",
-    "price": 8900,
-    "img": "https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=500&q=80",
-    "desc": "Хайлуулсан чеддар бяслагтай төмс"
-  },
-  {
-    "id": 12,
-    "name": "Бейконтой Чили Төмс",
-    "category": "burger",
-    "price": 9900,
-    "img": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шаржигнуур бейкон, чили соустай"
-  },
-  {
-    "id": 13,
-    "name": "Моцарелла Бяслагтай Савх",
-    "category": "burger",
-    "price": 8900,
-    "img": "https://images.unsplash.com/photo-1531749668029-2db88e4276c7?auto=format&fit=crop&w=500&q=80",
-    "desc": "Сунадаг моцарелла бяслагтай савх"
-  },
-  {
-    "id": 14,
-    "name": "Картофель по-деревенски",
-    "category": "burger",
-    "price": 7900,
-    "img": "https://images.unsplash.com/photo-1630384060421-cb3f20e06493?auto=format&fit=crop&w=500&q=80",
-    "desc": "Амталж шараасан том хэрчим төмс"
-  },
-  {
-    "id": 15,
-    "name": "Тар-Тар Соустай Бургер",
-    "category": "burger",
-    "price": 13900,
-    "img": "https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&w=500&q=80",
-    "desc": "Зөөлөн тар-тар соус, үхрийн мах"
-  },
-  {
-    "id": 16,
-    "name": "Сонгинотой Дүүрэн Бургер",
-    "category": "burger",
-    "price": 13500,
-    "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80",
-    "desc": "Кармелизжуулсан улаан сонгинотой"
-  },
-  {
-    "id": 17,
-    "name": "Фиш (Загасан) Бургер",
-    "category": "burger",
-    "price": 12900,
-    "img": "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шарсан загасны филе, лимон соус"
-  },
-  {
-    "id": 18,
-    "name": "Бяслагтай Сүвэн Төмс",
-    "category": "burger",
-    "price": 8500,
-    "img": "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=500&q=80",
-    "desc": "Вафли хэлбэрт шарсан амтлаг төмс"
-  },
-  {
-    "id": 19,
-    "name": "Сорвитой Грилл Бургер",
-    "category": "burger",
-    "price": 15500,
-    "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80",
-    "desc": "Ил гал дээр шарсан үхрийн мах"
-  },
-  {
-    "id": 20,
-    "name": "Мини Слайдер Бургер (3ш)",
-    "category": "burger",
-    "price": 14900,
-    "img": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=500&q=80",
-    "desc": "Жижиг хэмжээтэй 3 өөр бургер"
-  },
-  {
-    "id": 21,
-    "name": "Шаржигнуур Далавч (6ш)",
-    "category": "chicken",
-    "price": 15500,
-    "img": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
-    "desc": "Халуун ногоотой хачиртай тахиа"
-  },
-  {
-    "id": 22,
-    "name": "Шаржигнуур Далавч (12ш)",
-    "category": "chicken",
-    "price": 28000,
-    "img": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80",
-    "desc": "Гэр бүлийн багц шаржигнуур далавч"
-  },
-  {
-    "id": 23,
-    "name": "Тахианы Страйпс (4ш)",
-    "category": "chicken",
-    "price": 11000,
-    "img": "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80",
-    "desc": "Ясгүй цээж мах, тусгай амтлагчтай"
-  },
-  {
-    "id": 24,
-    "name": "Тахианы Наггетс (8ш)",
-    "category": "chicken",
-    "price": 9500,
-    "img": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=500&q=80",
-    "desc": "Бяцхан шаржигнуур тахианы мах"
-  },
-  {
-    "id": 25,
-    "name": "Солонгос Чихэрлэг Тахиа",
-    "category": "chicken",
-    "price": 18500,
-    "img": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=500&q=80",
-    "desc": "Солонгос соустай амталсан тахиа"
-  },
-  {
-    "id": 26,
-    "name": "Сонгинотой Амталсан Тахиа",
-    "category": "chicken",
-    "price": 19000,
-    "img": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=500&q=80",
-    "desc": "Ногоон сонгино, цуутай соус"
-  },
-  {
-    "id": 27,
-    "name": "BBQ Глейзтэй Тахианы Мөч",
-    "category": "chicken",
-    "price": 16500,
-    "img": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=500&q=80",
-    "desc": "BBQ сүмсэнд шарсан 4ш мөч"
-  },
-  {
-    "id": 28,
-    "name": "Халуун Попкорн Тахиа",
-    "category": "chicken",
-    "price": 10500,
-    "img": "https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&w=500&q=80",
-    "desc": "Баттермилк болон халуун чилитэй"
-  },
-  {
-    "id": 29,
-    "name": "Тахианы Цээж Махтай Сэндвич",
-    "category": "chicken",
-    "price": 13000,
-    "img": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=500&q=80",
-    "desc": "Гриллдэж шарсан цээж мах"
-  },
-  {
-    "id": 30,
-    "name": "Бүтэн Шарсан Тахиа",
-    "category": "chicken",
-    "price": 34500,
-    "img": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=500&q=80",
-    "desc": "Амталж шараасан бүтэн тахиа"
-  },
-  {
-    "id": 31,
-    "name": "Сармистай Шарсан Тахиа",
-    "category": "chicken",
-    "price": 18900,
-    "img": "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=500&q=80",
-    "desc": "Сармисны өтгөн соустай шарсан тахиа"
-  },
-  {
-    "id": 32,
-    "name": "Баффало Тахианы Далавч",
-    "category": "chicken",
-    "price": 16000,
-    "img": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
-    "desc": "Америк Баффало соустай чили далавч"
-  },
-  {
-    "id": 33,
-    "name": "Тахианы Махтай Цезарь Салат",
-    "category": "chicken",
-    "price": 12500,
-    "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80",
-    "desc": "Грилл тахиа, пармезан, сухари"
-  },
-  {
-    "id": 34,
-    "name": "Тахианы Махтай Бөгж (Rings)",
-    "category": "chicken",
-    "price": 11500,
-    "img": "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&w=500&q=80",
-    "desc": "Цээж махтай шаржигнуур цагираг"
-  },
-  {
-    "id": 35,
-    "name": "Амталсан Тахианы Тавхай",
-    "category": "chicken",
-    "price": 14500,
-    "img": "https://images.unsplash.com/photo-1604579278540-db35824c7f5a?auto=format&fit=crop&w=500&q=80",
-    "desc": "Тусгай дорнод жортой амталсан"
-  },
-  {
-    "id": 36,
-    "name": "Пепперони Пицца (30см)",
-    "category": "pizza",
-    "price": 24500,
-    "img": "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80",
-    "desc": "Пепперони хиам, моцарелла бяслаг"
-  },
-  {
-    "id": 37,
-    "name": "Маргарита Пицца (30см)",
-    "category": "pizza",
-    "price": 21000,
-    "img": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шинэхэн базилик, моцарелла бяслаг"
-  },
-  {
-    "id": 38,
-    "name": "BBQ Тахианы Пицца (30см)",
-    "category": "pizza",
-    "price": 26500,
-    "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80",
-    "desc": "BBQ соус, шарсан тахиа, улаан сонгино"
-  },
-  {
-    "id": 39,
-    "name": "4 Бяслагтай Пицца (30см)",
-    "category": "pizza",
-    "price": 27000,
-    "img": "https://images.unsplash.com/photo-1573821663912-569905455b1c?auto=format&fit=crop&w=500&q=80",
-    "desc": "Моцарелла, чеддар, пармезан, дор блю"
-  },
-  {
-    "id": 40,
-    "name": "Махтай Супер Пицца (30см)",
-    "category": "pizza",
-    "price": 28900,
-    "img": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=500&q=80",
-    "desc": "Үхрийн мах, бейкон, пепперони"
-  },
-  {
-    "id": 41,
-    "name": "Гавайн Пицца (30см)",
-    "category": "pizza",
-    "price": 23500,
-    "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80",
-    "desc": "Ананас, гахайн мах, бяслаг"
-  },
-  {
-    "id": 42,
-    "name": "Мөөгтэй Салями Пицца",
-    "category": "pizza",
-    "price": 25000,
-    "img": "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шинэхэн мөөг, салями хиам"
-  },
-  {
-    "id": 43,
-    "name": "Халуун Мексик Пицца",
-    "category": "pizza",
-    "price": 26000,
-    "img": "https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?auto=format&fit=crop&w=500&q=80",
-    "desc": "Чили чинжүү, үхрийн митбол, чили"
-  },
-  {
-    "id": 44,
-    "name": "Клаб Сэндвич",
-    "category": "pizza",
-    "price": 12900,
-    "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=80",
-    "desc": "Гурвалжин талх, гахай, өндөг, ногоо"
-  },
-  {
-    "id": 45,
-    "name": "Филадельфия Стейк Сэндвич",
-    "category": "pizza",
-    "price": 15900,
-    "img": "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=500&q=80",
-    "desc": "Хэрчсэн үхрийн мах, бяслаг"
-  },
-  {
-    "id": 46,
-    "name": "Туна Загастай Сэндвич",
-    "category": "pizza",
-    "price": 11500,
-    "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80",
-    "desc": "Туна загасны салат, өргөст хэмх"
-  },
-  {
-    "id": 47,
-    "name": "Мексик Буррито",
-    "category": "pizza",
-    "price": 13900,
-    "img": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
-    "desc": "Тортиллад ороосон үхрийн мах, буурцаг"
-  },
-  {
-    "id": 48,
-    "name": "Тахианы Твистер Ороомог",
-    "category": "pizza",
-    "price": 12500,
-    "img": "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=500&q=80",
-    "desc": "Лаваш талханд ороосон тахиа"
-  },
-  {
-    "id": 49,
-    "name": "Гриллдсэн Бяслагтай Тост",
-    "category": "pizza",
-    "price": 8900,
-    "img": "https://images.unsplash.com/photo-1475090169767-40ea8d6ed091?auto=format&fit=crop&w=500&q=80",
-    "desc": "Сунадаг 3 төрлийн бяслагтай тост"
-  },
-  {
-    "id": 50,
-    "name": "Бейкон Панини Сэндвич",
-    "category": "pizza",
-    "price": 13500,
-    "img": "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?auto=format&fit=crop&w=500&q=80",
-    "desc": "Итали панини талх, шарсан бейкон"
-  },
-  {
-    "id": 51,
-    "name": "Вегетариан Тортилла",
-    "category": "pizza",
-    "price": 10900,
-    "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80",
-    "desc": "Гриллдэж амталсан ногоотой ороомог"
-  },
-  {
-    "id": 52,
-    "name": "Салмон Загастай Бэйгл",
-    "category": "pizza",
-    "price": 16900,
-    "img": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=500&q=80",
-    "desc": "Утаатай салмон, крим чизтэй бэйгл"
-  },
-  {
-    "id": 53,
-    "name": "Итали Капрезе Панини",
-    "category": "pizza",
-    "price": 12900,
-    "img": "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=500&q=80",
-    "desc": "Моцарелла, песто соус, улаан лооль"
-  },
-  {
-    "id": 54,
-    "name": "BBQ Свиной Сэндвич",
-    "category": "pizza",
-    "price": 14500,
-    "img": "https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=500&q=80",
-    "desc": "Утсан гахайн мах, BBQ соус"
-  },
-  {
-    "id": 55,
-    "name": "Мини Пицца Сет (3ш)",
-    "category": "pizza",
-    "price": 29900,
-    "img": "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=500&q=80",
-    "desc": "3 өөр амттай 15см мини пицца"
-  },
-  {
-    "id": 56,
-    "name": "Рамен Гогцоотой Шөл",
-    "category": "asian",
-    "price": 14500,
-    "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80",
-    "desc": "Япон маягийн гахайн махтай рамен"
-  },
-  {
-    "id": 57,
-    "name": "Кимбап (Солонгос Ороомог)",
-    "category": "asian",
-    "price": 9900,
-    "img": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=500&q=80",
-    "desc": "Үхрийн мах, ногоотой далайн замагтай ороомог"
-  },
-  {
-    "id": 58,
-    "name": "Токпокки (Халуун Төртэй)",
-    "category": "asian",
-    "price": 12500,
-    "img": "https://images.unsplash.com/photo-1583224964978-2257b960c3d3?auto=format&fit=crop&w=500&q=80",
-    "desc": "Халуун чили соустай будааны боорцог"
-  },
-  {
-    "id": 59,
-    "name": "Терияки Үхрийн Махтай Будаа",
-    "category": "asian",
-    "price": 16500,
-    "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80",
-    "desc": "Терияки соустай үхрийн мах, агшаасан будаа"
-  },
-  {
-    "id": 60,
-    "name": "Пад Тай Гогцоо (Pad Thai)",
-    "category": "asian",
-    "price": 15900,
-    "img": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=500&q=80",
-    "desc": "Тайланд гогцоо, сам хорхой, самхар"
-  },
-  {
-    "id": 61,
-    "name": "Шарсан банш (Gyoza 8ш)",
-    "category": "asian",
-    "price": 11000,
-    "img": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=500&q=80",
-    "desc": "Япон шарсан банш, соустай"
-  },
-  {
-    "id": 62,
-    "name": "Сам Хорхойтой Шарсан Будаа",
-    "category": "asian",
-    "price": 15500,
-    "img": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=500&q=80",
-    "desc": "Тусгай амтлагчтай шарсан будаа"
-  },
-  {
-    "id": 63,
-    "name": "Свиной Кацу Карри Будаа",
-    "category": "asian",
-    "price": 17500,
-    "img": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шарсан гахайн мах, япон карри соус"
-  },
-  {
-    "id": 64,
-    "name": "Якисоба Гогцоо",
-    "category": "asian",
-    "price": 14000,
-    "img": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шарсан ногоо, махтай япон соустай гогцоо"
-  },
-  {
-    "id": 65,
-    "name": "Том Ям Шөл (Tom Yum)",
-    "category": "asian",
-    "price": 18900,
-    "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500&q=80",
-    "desc": "Халуун исгэлэн Тайланд сам хорхойтой шөл"
-  },
-  {
-    "id": 66,
-    "name": "Сам хорхойн Темпура (5ш)",
-    "category": "asian",
-    "price": 16900,
-    "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шаржигнуур бүрээстэй том сам хорхой"
-  },
-  {
-    "id": 67,
-    "name": "Халуун Ногоотой Булгоги",
-    "category": "asian",
-    "price": 17900,
-    "img": "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=500&q=80",
-    "desc": "Амталсан солонгос үхрийн мах"
-  },
-  {
-    "id": 68,
-    "name": "Дим Сам Банш (Dim Sum 6ш)",
-    "category": "asian",
-    "price": 13500,
-    "img": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=500&q=80",
-    "desc": "Ууранд жигнасэн хятад банш"
-  },
-  {
-    "id": 69,
-    "name": "Вонтон Шөл (Wonton Soup)",
-    "category": "asian",
-    "price": 12900,
-    "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500&q=80",
-    "desc": "Жижиг банштай цэвэр шөл"
-  },
-  {
-    "id": 70,
-    "name": "Такояки Бөмбөлөг (6ш)",
-    "category": "asian",
-    "price": 11900,
-    "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80",
-    "desc": "Далайн наймаалжтай япон боорцог"
-  },
-  {
-    "id": 71,
-    "name": "Шоколадтай Донат",
-    "category": "dessert",
-    "price": 4500,
-    "img": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80",
-    "desc": "Зөөлөн кремтэй, шоколадан бүрээстэй"
-  },
-  {
-    "id": 72,
-    "name": "Гүзээлзгэнэтэй Донат",
-    "category": "dessert",
-    "price": 4500,
-    "img": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=500&q=80",
-    "desc": "Гүзээлзгэний глазурь болон чимэглэлтэй донат"
-  },
-  {
-    "id": 73,
-    "name": "Нью-Йорк Чизкейк",
-    "category": "dessert",
-    "price": 8500,
-    "img": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80",
-    "desc": "Зөөлөн сүүн бяслаган бялуу"
-  },
-  {
-    "id": 74,
-    "name": "Шоколадтай Лава Торт",
-    "category": "dessert",
-    "price": 7900,
-    "img": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
-    "desc": "Дотор нь халуун шоколад урсдаг"
-  },
-  {
-    "id": 75,
-    "name": "Алимны Чихэрлэг Пирог (Apple Pie)",
-    "category": "dessert",
-    "price": 6500,
-    "img": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шарах шүүгээнд жигнэсэн алимтай пирог"
-  },
-  {
-    "id": 76,
-    "name": "Ванильтай Сүүн Зайрмаг",
-    "category": "dessert",
-    "price": 3500,
-    "img": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=500&q=80",
-    "desc": "Сүүн ванилийн амттай конусан зайрмаг"
-  },
-  {
-    "id": 77,
-    "name": "Шоколадтай Чурос (6ш)",
-    "category": "dessert",
-    "price": 7500,
-    "img": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=500&q=80",
-    "desc": "Синнамонтой шарсан испани чурос"
-  },
-  {
-    "id": 78,
-    "name": "Тирамису Торт",
-    "category": "dessert",
-    "price": 8900,
-    "img": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=500&q=80",
-    "desc": "Итали кофе болон маскарпоне бяслагтай"
-  },
-  {
-    "id": 79,
-    "name": "Брауни (Brownie)",
-    "category": "dessert",
-    "price": 5500,
-    "img": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
-    "desc": "Өтгөн шоколадтай самтай брауни"
-  },
-  {
-    "id": 80,
-    "name": "Вафли ба Ваниль Зайрмаг",
-    "category": "dessert",
-    "price": 9500,
-    "img": "https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&w=500&q=80",
-    "desc": "Бельги вафли, жимс болон зайрмагтай"
-  },
-  {
-    "id": 81,
-    "name": "Франц Макарон (Macaron 5ш)",
-    "category": "dessert",
-    "price": 11900,
-    "img": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=500&q=80",
-    "desc": "Төрөл бүрийн жимсний амттай макарон"
-  },
-  {
-    "id": 82,
-    "name": "Круассан Шоколадтай",
-    "category": "dessert",
-    "price": 5900,
-    "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80",
-    "desc": "Франц шоштой зөөлөн круассан"
-  },
-  {
-    "id": 83,
-    "name": "Панкейк ба Зөгийн Бал",
-    "category": "dessert",
-    "price": 8900,
-    "img": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=500&q=80",
-    "desc": "Давхар америк панкейк, зөгийн бал"
-  },
-  {
-    "id": 84,
-    "name": "Жимсний Тарт (Fruit Tart)",
-    "category": "dessert",
-    "price": 7900,
-    "img": "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шинэхэн жимс, кремтэй жигнэмэг"
-  },
-  {
-    "id": 85,
-    "name": "Манго Пуддинг",
-    "category": "dessert",
-    "price": 6500,
-    "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=500&q=80",
-    "desc": "Амтат манго жимсний зөөлөн пуддинг"
-  },
-  {
-    "id": 86,
-    "name": "Кока Кола 0.5L",
-    "category": "drink",
-    "price": 3500,
-    "img": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80",
-    "desc": "Мөстэй хөргөсөн хийтэй ундаа"
-  },
-  {
-    "id": 87,
-    "name": "Спрайт 0.5L",
-    "category": "drink",
-    "price": 3500,
-    "img": "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?auto=format&fit=crop&w=500&q=80",
-    "desc": "Лимоны амттай мөстэй ундаа"
-  },
-  {
-    "id": 88,
-    "name": "Фанта 0.5L (Orange Fanta)",
-    "category": "drink",
-    "price": 3500,
-    "img": "https://images.unsplash.com/photo-1624517452488-04869289c4ca?auto=format&fit=crop&w=500&q=80",
-    "desc": "Жүржийн амттай хийтэй ундаа"
-  },
-  {
-    "id": 89,
-    "name": "Шоколадтай Шейк",
-    "category": "drink",
-    "price": 7900,
-    "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=500&q=80",
-    "desc": "Зайрмаг болон шоколадтай шейк"
-  },
-  {
-    "id": 90,
-    "name": "Гүзээлзгэний Шейк",
-    "category": "drink",
-    "price": 7900,
-    "img": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=500&q=80",
-    "desc": "Гүзээлзгэний амттай сүүн шейк"
-  },
-  {
-    "id": 91,
-    "name": "Американо Кофе",
-    "category": "drink",
-    "price": 5500,
-    "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шинээр татсан эспрессо кофе"
-  },
-  {
-    "id": 92,
-    "name": "Латте (Iced/Hot Latte)",
-    "category": "drink",
-    "price": 6900,
-    "img": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80",
-    "desc": "Зөөлөн сүүтэй эспрессо кофе"
-  },
-  {
-    "id": 93,
-    "name": "Лимонтой Мөстэй Цай",
-    "category": "drink",
-    "price": 4500,
-    "img": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=500&q=80",
-    "desc": "Лимонтой хүйтэн цай"
-  },
-  {
-    "id": 94,
-    "name": "Тарвастай Мохито Смути",
-    "category": "drink",
-    "price": 8500,
-    "img": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=500&q=80",
-    "desc": "Тарвас, гаатай сэргээштэй ундаа"
-  },
-  {
-    "id": 95,
-    "name": "Цэвэр Ус (Mineral Water 0.5L)",
-    "category": "drink",
-    "price": 1500,
-    "img": "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=500&q=80",
-    "desc": "Байгалийн цэвэр савласан ус"
-  },
-  {
-    "id": 96,
-    "name": "Капучино Кофе",
-    "category": "drink",
-    "price": 6500,
-    "img": "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80",
-    "desc": "Өтгөн сүүн хөөстэй капучино"
-  },
-  {
-    "id": 97,
-    "name": "Мача Латте (Matcha Green Tea)",
-    "category": "drink",
-    "price": 7500,
-    "img": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=500&q=80",
-    "desc": "Япон ногоон цайтай сүүн латте"
-  },
-  {
-    "id": 98,
-    "name": "Карамель Маккиато",
-    "category": "drink",
-    "price": 7500,
-    "img": "https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=500&q=80",
-    "desc": "Карамель сироптой эспрессо кофе"
-  },
-  {
-    "id": 99,
-    "name": "Жүржийн Шинэхэн Шүүс (Orange Juice)",
-    "category": "drink",
-    "price": 6900,
-    "img": "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=500&q=80",
-    "desc": "Шинээр шахсан 100% жүржийн шүүс"
-  },
-  {
-    "id": 100,
-    "name": "Ред Булл (Red Bull 0.25L)",
-    "category": "drink",
-    "price": 6500,
-    "img": "https://images.unsplash.com/photo-1527960471264-932f39eb5846?auto=format&fit=crop&w=500&q=80",
-    "desc": "Эрчим хүчний ундаа"
-  }
-];
+      {
+        "id": 1,
+        "name": "Сонгодог Чизбургер",
+        "category": "burger",
+        "price": 12500,
+        "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80",
+        "desc": "Үхрийн махан котлет, бяслаг, тусгай сүмс"
+      },
+      {
+        "id": 2,
+        "name": "Давхар Махтай Бургер",
+        "category": "burger",
+        "price": 16900,
+        "img": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=500&q=80",
+        "desc": "Давхар үхрийн мах, давхар бяслаг, өргөст хэмх"
+      },
+      {
+        "id": 3,
+        "name": "Халуун Ногоотой Чили Бургер",
+        "category": "burger",
+        "price": 14500,
+        "img": "https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=500&q=80",
+        "desc": "Халуун чили сүмс, халапеньо чинжүү"
+      },
+      {
+        "id": 4,
+        "name": "BBQ Бейкон Бургер",
+        "category": "burger",
+        "price": 15900,
+        "img": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шарж амталсан бейкон, BBQ сүмс"
+      },
+      {
+        "id": 5,
+        "name": "Мөөгтэй Швейц Бургер",
+        "category": "burger",
+        "price": 16500,
+        "img": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шантрэл мөөг, швейцар бяслаг"
+      },
+      {
+        "id": 6,
+        "name": "Авокадо Веган Бургер",
+        "category": "burger",
+        "price": 14000,
+        "img": "https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&w=500&q=80",
+        "desc": "Ургамлын котлет, авокадо, салат навч"
+      },
+      {
+        "id": 7,
+        "name": "Гавайн Ананастай Бургер",
+        "category": "burger",
+        "price": 15000,
+        "img": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80",
+        "desc": "Гриллдэж амталсан ананас, үхрийн мах"
+      },
+      {
+        "id": 8,
+        "name": "Triple Деラックス Бургер",
+        "category": "burger",
+        "price": 19900,
+        "img": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f6?auto=format&fit=crop&w=500&q=80",
+        "desc": "3 давхар үхрийн махан котлет, чеддар"
+      },
+      {
+        "id": 9,
+        "name": "Шарсан Төмс (L)",
+        "category": "burger",
+        "price": 6500,
+        "img": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=500&q=80",
+        "desc": "Амталсан шаржигнуур шарсан төмс"
+      },
+      {
+        "id": 10,
+        "name": "Сонгины Цагираг",
+        "category": "burger",
+        "price": 7500,
+        "img": "https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=80",
+        "desc": "Амталж шарсан шаржигнуур сонгино"
+      },
+      {
+        "id": 11,
+        "name": "Бяслагтай Шарсан Төмс",
+        "category": "burger",
+        "price": 8900,
+        "img": "https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=500&q=80",
+        "desc": "Хайлуулсан чеддар бяслагтай төмс"
+      },
+      {
+        "id": 12,
+        "name": "Бейконтой Чили Төмс",
+        "category": "burger",
+        "price": 9900,
+        "img": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шаржигнуур бейкон, чили соустай"
+      },
+      {
+        "id": 13,
+        "name": "Моцарелла Бяслагтай Савх",
+        "category": "burger",
+        "price": 8900,
+        "img": "https://images.unsplash.com/photo-1531749668029-2db88e4276c7?auto=format&fit=crop&w=500&q=80",
+        "desc": "Сунадаг моцарелла бяслагтай савх"
+      },
+      {
+        "id": 14,
+        "name": "Картофель по-деревенски",
+        "category": "burger",
+        "price": 7900,
+        "img": "https://images.unsplash.com/photo-1630384060421-cb3f20e06493?auto=format&fit=crop&w=500&q=80",
+        "desc": "Амталж шараасан том хэрчим төмс"
+      },
+      {
+        "id": 15,
+        "name": "Тар-Тар Соустай Бургер",
+        "category": "burger",
+        "price": 13900,
+        "img": "https://images.unsplash.com/photo-1512152272829-e3139592d56f?auto=format&fit=crop&w=500&q=80",
+        "desc": "Зөөлөн тар-тар соус, үхрийн мах"
+      },
+      {
+        "id": 16,
+        "name": "Сонгинотой Дүүрэн Бургер",
+        "category": "burger",
+        "price": 13500,
+        "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80",
+        "desc": "Кармелизжуулсан улаан сонгинотой"
+      },
+      {
+        "id": 17,
+        "name": "Фиш (Загасан) Бургер",
+        "category": "burger",
+        "price": 12900,
+        "img": "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шарсан загасны филе, лимон соус"
+      },
+      {
+        "id": 18,
+        "name": "Бяслагтай Сүвэн Төмс",
+        "category": "burger",
+        "price": 8500,
+        "img": "https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=500&q=80",
+        "desc": "Вафли хэлбэрт шарсан амтлаг төмс"
+      },
+      {
+        "id": 19,
+        "name": "Сорвитой Грилл Бургер",
+        "category": "burger",
+        "price": 15500,
+        "img": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80",
+        "desc": "Ил гал дээр шарсан үхрийн мах"
+      },
+      {
+        "id": 20,
+        "name": "Мини Слайдер Бургер (3ш)",
+        "category": "burger",
+        "price": 14900,
+        "img": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=500&q=80",
+        "desc": "Жижиг хэмжээтэй 3 өөр бургер"
+      },
+      {
+        "id": 21,
+        "name": "Шаржигнуур Далавч (6ш)",
+        "category": "chicken",
+        "price": 15500,
+        "img": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
+        "desc": "Халуун ногоотой хачиртай тахиа"
+      },
+      {
+        "id": 22,
+        "name": "Шаржигнуур Далавч (12ш)",
+        "category": "chicken",
+        "price": 28000,
+        "img": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80",
+        "desc": "Гэр бүлийн багц шаржигнуур далавч"
+      },
+      {
+        "id": 23,
+        "name": "Тахианы Страйпс (4ш)",
+        "category": "chicken",
+        "price": 11000,
+        "img": "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80",
+        "desc": "Ясгүй цээж мах, тусгай амтлагчтай"
+      },
+      {
+        "id": 24,
+        "name": "Тахианы Наггетс (8ш)",
+        "category": "chicken",
+        "price": 9500,
+        "img": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=500&q=80",
+        "desc": "Бяцхан шаржигнуур тахианы мах"
+      },
+      {
+        "id": 25,
+        "name": "Солонгос Чихэрлэг Тахиа",
+        "category": "chicken",
+        "price": 18500,
+        "img": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=500&q=80",
+        "desc": "Солонгос соустай амталсан тахиа"
+      },
+      {
+        "id": 26,
+        "name": "Сонгинотой Амталсан Тахиа",
+        "category": "chicken",
+        "price": 19000,
+        "img": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=500&q=80",
+        "desc": "Ногоон сонгино, цуутай соус"
+      },
+      {
+        "id": 27,
+        "name": "BBQ Глейзтэй Тахианы Мөч",
+        "category": "chicken",
+        "price": 16500,
+        "img": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=500&q=80",
+        "desc": "BBQ сүмсэнд шарсан 4ш мөч"
+      },
+      {
+        "id": 28,
+        "name": "Халуун Попкорн Тахиа",
+        "category": "chicken",
+        "price": 10500,
+        "img": "https://images.unsplash.com/photo-1585325701165-351af916e581?auto=format&fit=crop&w=500&q=80",
+        "desc": "Баттермилк болон халуун чилитэй"
+      },
+      {
+        "id": 29,
+        "name": "Тахианы Цээж Махтай Сэндвич",
+        "category": "chicken",
+        "price": 13000,
+        "img": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=500&q=80",
+        "desc": "Гриллдэж шарсан цээж мах"
+      },
+      {
+        "id": 30,
+        "name": "Бүтэн Шарсан Тахиа",
+        "category": "chicken",
+        "price": 34500,
+        "img": "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=500&q=80",
+        "desc": "Амталж шараасан бүтэн тахиа"
+      },
+      {
+        "id": 31,
+        "name": "Сармистай Шарсан Тахиа",
+        "category": "chicken",
+        "price": 18900,
+        "img": "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=500&q=80",
+        "desc": "Сармисны өтгөн соустай шарсан тахиа"
+      },
+      {
+        "id": 32,
+        "name": "Баффало Тахианы Далавч",
+        "category": "chicken",
+        "price": 16000,
+        "img": "https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80",
+        "desc": "Америк Баффало соустай чили далавч"
+      },
+      {
+        "id": 33,
+        "name": "Тахианы Махтай Цезарь Салат",
+        "category": "chicken",
+        "price": 12500,
+        "img": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80",
+        "desc": "Грилл тахиа, пармезан, сухари"
+      },
+      {
+        "id": 34,
+        "name": "Тахианы Махтай Бөгж (Rings)",
+        "category": "chicken",
+        "price": 11500,
+        "img": "https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&w=500&q=80",
+        "desc": "Цээж махтай шаржигнуур цагираг"
+      },
+      {
+        "id": 35,
+        "name": "Амталсан Тахианы Тавхай",
+        "category": "chicken",
+        "price": 14500,
+        "img": "https://images.unsplash.com/photo-1604579278540-db35824c7f5a?auto=format&fit=crop&w=500&q=80",
+        "desc": "Тусгай дорнод жортой амталсан"
+      },
+      {
+        "id": 36,
+        "name": "Пепперони Пицца (30см)",
+        "category": "pizza",
+        "price": 24500,
+        "img": "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80",
+        "desc": "Пепперони хиам, моцарелла бяслаг"
+      },
+      {
+        "id": 37,
+        "name": "Маргарита Пицца (30см)",
+        "category": "pizza",
+        "price": 21000,
+        "img": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шинэхэн базилик, моцарелла бяслаг"
+      },
+      {
+        "id": 38,
+        "name": "BBQ Тахианы Пицца (30см)",
+        "category": "pizza",
+        "price": 26500,
+        "img": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80",
+        "desc": "BBQ соус, шарсан тахиа, улаан сонгино"
+      },
+      {
+        "id": 39,
+        "name": "4 Бяслагтай Пицца (30см)",
+        "category": "pizza",
+        "price": 27000,
+        "img": "https://images.unsplash.com/photo-1573821663912-569905455b1c?auto=format&fit=crop&w=500&q=80",
+        "desc": "Моцарелла, чеддар, пармезан, дор блю"
+      },
+      {
+        "id": 40,
+        "name": "Махтай Супер Пицца (30см)",
+        "category": "pizza",
+        "price": 28900,
+        "img": "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=500&q=80",
+        "desc": "Үхрийн мах, бейкон, пепперони"
+      },
+      {
+        "id": 41,
+        "name": "Гавайн Пицца (30см)",
+        "category": "pizza",
+        "price": 23500,
+        "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80",
+        "desc": "Ананас, гахайн мах, бяслаг"
+      },
+      {
+        "id": 42,
+        "name": "Мөөгтэй Салями Пицца",
+        "category": "pizza",
+        "price": 25000,
+        "img": "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шинэхэн мөөг, салями хиам"
+      },
+      {
+        "id": 43,
+        "name": "Халуун Мексик Пицца",
+        "category": "pizza",
+        "price": 26000,
+        "img": "https://images.unsplash.com/photo-1588315029754-2dd089d39a1a?auto=format&fit=crop&w=500&q=80",
+        "desc": "Чили чинжүү, үхрийн митбол, чили"
+      },
+      {
+        "id": 44,
+        "name": "Клаб Сэндвич",
+        "category": "pizza",
+        "price": 12900,
+        "img": "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=80",
+        "desc": "Гурвалжин талх, гахай, өндөг, ногоо"
+      },
+      {
+        "id": 45,
+        "name": "Филадельфия Стейк Сэндвич",
+        "category": "pizza",
+        "price": 15900,
+        "img": "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=500&q=80",
+        "desc": "Хэрчсэн үхрийн мах, бяслаг"
+      },
+      {
+        "id": 46,
+        "name": "Туна Загастай Сэндвич",
+        "category": "pizza",
+        "price": 11500,
+        "img": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80",
+        "desc": "Туна загасны салат, өргөст хэмх"
+      },
+      {
+        "id": 47,
+        "name": "Мексик Буррито",
+        "category": "pizza",
+        "price": 13900,
+        "img": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80",
+        "desc": "Тортиллад ороосон үхрийн мах, буурцаг"
+      },
+      {
+        "id": 48,
+        "name": "Тахианы Твистер Ороомог",
+        "category": "pizza",
+        "price": 12500,
+        "img": "https://images.unsplash.com/photo-1561651823-34feb02250e4?auto=format&fit=crop&w=500&q=80",
+        "desc": "Лаваш талханд ороосон тахиа"
+      },
+      {
+        "id": 49,
+        "name": "Гриллдсэн Бяслагтай Тост",
+        "category": "pizza",
+        "price": 8900,
+        "img": "https://images.unsplash.com/photo-1475090169767-40ea8d6ed091?auto=format&fit=crop&w=500&q=80",
+        "desc": "Сунадаг 3 төрлийн бяслагтай тост"
+      },
+      {
+        "id": 50,
+        "name": "Бейкон Панини Сэндвич",
+        "category": "pizza",
+        "price": 13500,
+        "img": "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?auto=format&fit=crop&w=500&q=80",
+        "desc": "Итали панини талх, шарсан бейкон"
+      },
+      {
+        "id": 51,
+        "name": "Вегетариан Тортилла",
+        "category": "pizza",
+        "price": 10900,
+        "img": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80",
+        "desc": "Гриллдэж амталсан ногоотой ороомог"
+      },
+      {
+        "id": 52,
+        "name": "Салмон Загастай Бэйгл",
+        "category": "pizza",
+        "price": 16900,
+        "img": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=500&q=80",
+        "desc": "Утаатай салмон, крим чизтэй бэйгл"
+      },
+      {
+        "id": 53,
+        "name": "Итали Капрезе Панини",
+        "category": "pizza",
+        "price": 12900,
+        "img": "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=500&q=80",
+        "desc": "Моцарелла, песто соус, улаан лооль"
+      },
+      {
+        "id": 54,
+        "name": "BBQ Свиной Сэндвич",
+        "category": "pizza",
+        "price": 14500,
+        "img": "https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=500&q=80",
+        "desc": "Утсан гахайн мах, BBQ соус"
+      },
+      {
+        "id": 55,
+        "name": "Мини Пицца Сет (3ш)",
+        "category": "pizza",
+        "price": 29900,
+        "img": "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=500&q=80",
+        "desc": "3 өөр амттай 15см мини пицца"
+      },
+      {
+        "id": 56,
+        "name": "Рамен Гогцоотой Шөл",
+        "category": "asian",
+        "price": 14500,
+        "img": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80",
+        "desc": "Япон маягийн гахайн махтай рамен"
+      },
+      {
+        "id": 57,
+        "name": "Кимбап (Солонгос Ороомог)",
+        "category": "asian",
+        "price": 9900,
+        "img": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=500&q=80",
+        "desc": "Үхрийн мах, ногоотой далайн замагтай ороомог"
+      },
+      {
+        "id": 58,
+        "name": "Токпокки (Халуун Төртэй)",
+        "category": "asian",
+        "price": 12500,
+        "img": "https://images.unsplash.com/photo-1583224964978-2257b960c3d3?auto=format&fit=crop&w=500&q=80",
+        "desc": "Халуун чили соустай будааны боорцог"
+      },
+      {
+        "id": 59,
+        "name": "Терияки Үхрийн Махтай Будаа",
+        "category": "asian",
+        "price": 16500,
+        "img": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80",
+        "desc": "Терияки соустай үхрийн мах, агшаасан будаа"
+      },
+      {
+        "id": 60,
+        "name": "Пад Тай Гогцоо (Pad Thai)",
+        "category": "asian",
+        "price": 15900,
+        "img": "https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=500&q=80",
+        "desc": "Тайланд гогцоо, сам хорхой, самхар"
+      },
+      {
+        "id": 61,
+        "name": "Шарсан банш (Gyoza 8ш)",
+        "category": "asian",
+        "price": 11000,
+        "img": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=500&q=80",
+        "desc": "Япон шарсан банш, соустай"
+      },
+      {
+        "id": 62,
+        "name": "Сам Хорхойтой Шарсан Будаа",
+        "category": "asian",
+        "price": 15500,
+        "img": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=500&q=80",
+        "desc": "Тусгай амтлагчтай шарсан будаа"
+      },
+      {
+        "id": 63,
+        "name": "Свиной Кацу Карри Будаа",
+        "category": "asian",
+        "price": 17500,
+        "img": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шарсан гахайн мах, япон карри соус"
+      },
+      {
+        "id": 64,
+        "name": "Якисоба Гогцоо",
+        "category": "asian",
+        "price": 14000,
+        "img": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шарсан ногоо, махтай япон соустай гогцоо"
+      },
+      {
+        "id": 65,
+        "name": "Том Ям Шөл (Tom Yum)",
+        "category": "asian",
+        "price": 18900,
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500&q=80",
+        "desc": "Халуун исгэлэн Тайланд сам хорхойтой шөл"
+      },
+      {
+        "id": 66,
+        "name": "Сам хорхойн Темпура (5ш)",
+        "category": "asian",
+        "price": 16900,
+        "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шаржигнуур бүрээстэй том сам хорхой"
+      },
+      {
+        "id": 67,
+        "name": "Халуун Ногоотой Булгоги",
+        "category": "asian",
+        "price": 17900,
+        "img": "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=500&q=80",
+        "desc": "Амталсан солонгос үхрийн мах"
+      },
+      {
+        "id": 68,
+        "name": "Дим Сам Банш (Dim Sum 6ш)",
+        "category": "asian",
+        "price": 13500,
+        "img": "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=500&q=80",
+        "desc": "Ууранд жигнасэн хятад банш"
+      },
+      {
+        "id": 69,
+        "name": "Вонтон Шөл (Wonton Soup)",
+        "category": "asian",
+        "price": 12900,
+        "img": "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=500&q=80",
+        "desc": "Жижиг банштай цэвэр шөл"
+      },
+      {
+        "id": 70,
+        "name": "Такояки Бөмбөлөг (6ш)",
+        "category": "asian",
+        "price": 11900,
+        "img": "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80",
+        "desc": "Далайн наймаалжтай япон боорцог"
+      },
+      {
+        "id": 71,
+        "name": "Шоколадтай Донат",
+        "category": "dessert",
+        "price": 4500,
+        "img": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=500&q=80",
+        "desc": "Зөөлөн кремтэй, шоколадан бүрээстэй"
+      },
+      {
+        "id": 72,
+        "name": "Гүзээлзгэнэтэй Донат",
+        "category": "dessert",
+        "price": 4500,
+        "img": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=500&q=80",
+        "desc": "Гүзээлзгэний глазурь болон чимэглэлтэй донат"
+      },
+      {
+        "id": 73,
+        "name": "Нью-Йорк Чизкейк",
+        "category": "dessert",
+        "price": 8500,
+        "img": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80",
+        "desc": "Зөөлөн сүүн бяслаган бялуу"
+      },
+      {
+        "id": 74,
+        "name": "Шоколадтай Лава Торт",
+        "category": "dessert",
+        "price": 7900,
+        "img": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
+        "desc": "Дотор нь халуун шоколад урсдаг"
+      },
+      {
+        "id": 75,
+        "name": "Алимны Чихэрлэг Пирог (Apple Pie)",
+        "category": "dessert",
+        "price": 6500,
+        "img": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шарах шүүгээнд жигнэсэн алимтай пирог"
+      },
+      {
+        "id": 76,
+        "name": "Ванильтай Сүүн Зайрмаг",
+        "category": "dessert",
+        "price": 3500,
+        "img": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=500&q=80",
+        "desc": "Сүүн ванилийн амттай конусан зайрмаг"
+      },
+      {
+        "id": 77,
+        "name": "Шоколадтай Чурос (6ш)",
+        "category": "dessert",
+        "price": 7500,
+        "img": "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?auto=format&fit=crop&w=500&q=80",
+        "desc": "Синнамонтой шарсан испани чурос"
+      },
+      {
+        "id": 78,
+        "name": "Тирамису Торт",
+        "category": "dessert",
+        "price": 8900,
+        "img": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=500&q=80",
+        "desc": "Итали кофе болон маскарпоне бяслагтай"
+      },
+      {
+        "id": 79,
+        "name": "Брауни (Brownie)",
+        "category": "dessert",
+        "price": 5500,
+        "img": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80",
+        "desc": "Өтгөн шоколадтай самтай брауни"
+      },
+      {
+        "id": 80,
+        "name": "Вафли ба Ваниль Зайрмаг",
+        "category": "dessert",
+        "price": 9500,
+        "img": "https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&w=500&q=80",
+        "desc": "Бельги вафли, жимс болон зайрмагтай"
+      },
+      {
+        "id": 81,
+        "name": "Франц Макарон (Macaron 5ш)",
+        "category": "dessert",
+        "price": 11900,
+        "img": "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=500&q=80",
+        "desc": "Төрөл бүрийн жимсний амттай макарон"
+      },
+      {
+        "id": 82,
+        "name": "Круассан Шоколадтай",
+        "category": "dessert",
+        "price": 5900,
+        "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80",
+        "desc": "Франц шоштой зөөлөн круассан"
+      },
+      {
+        "id": 83,
+        "name": "Панкейк ба Зөгийн Бал",
+        "category": "dessert",
+        "price": 8900,
+        "img": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=500&q=80",
+        "desc": "Давхар америк панкейк, зөгийн бал"
+      },
+      {
+        "id": 84,
+        "name": "Жимсний Тарт (Fruit Tart)",
+        "category": "dessert",
+        "price": 7900,
+        "img": "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шинэхэн жимс, кремтэй жигнэмэг"
+      },
+      {
+        "id": 85,
+        "name": "Манго Пуддинг",
+        "category": "dessert",
+        "price": 6500,
+        "img": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=500&q=80",
+        "desc": "Амтат манго жимсний зөөлөн пуддинг"
+      },
+      {
+        "id": 86,
+        "name": "Кока Кола 0.5L",
+        "category": "drink",
+        "price": 3500,
+        "img": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80",
+        "desc": "Мөстэй хөргөсөн хийтэй ундаа"
+      },
+      {
+        "id": 87,
+        "name": "Спрайт 0.5L",
+        "category": "drink",
+        "price": 3500,
+        "img": "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?auto=format&fit=crop&w=500&q=80",
+        "desc": "Лимоны амттай мөстэй ундаа"
+      },
+      {
+        "id": 88,
+        "name": "Фанта 0.5L (Orange Fanta)",
+        "category": "drink",
+        "price": 3500,
+        "img": "https://images.unsplash.com/photo-1624517452488-04869289c4ca?auto=format&fit=crop&w=500&q=80",
+        "desc": "Жүржийн амттай хийтэй ундаа"
+      },
+      {
+        "id": 89,
+        "name": "Шоколадтай Шейк",
+        "category": "drink",
+        "price": 7900,
+        "img": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=500&q=80",
+        "desc": "Зайрмаг болон шоколадтай шейк"
+      },
+      {
+        "id": 90,
+        "name": "Гүзээлзгэний Шейк",
+        "category": "drink",
+        "price": 7900,
+        "img": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=500&q=80",
+        "desc": "Гүзээлзгэний амттай сүүн шейк"
+      },
+      {
+        "id": 91,
+        "name": "Американо Кофе",
+        "category": "drink",
+        "price": 5500,
+        "img": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шинээр татсан эспрессо кофе"
+      },
+      {
+        "id": 92,
+        "name": "Латте (Iced/Hot Latte)",
+        "category": "drink",
+        "price": 6900,
+        "img": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80",
+        "desc": "Зөөлөн сүүтэй эспрессо кофе"
+      },
+      {
+        "id": 93,
+        "name": "Лимонтой Мөстэй Цай",
+        "category": "drink",
+        "price": 4500,
+        "img": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=500&q=80",
+        "desc": "Лимонтой хүйтэн цай"
+      },
+      {
+        "id": 94,
+        "name": "Тарвастай Мохито Смути",
+        "category": "drink",
+        "price": 8500,
+        "img": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=500&q=80",
+        "desc": "Тарвас, гаатай сэргээштэй ундаа"
+      },
+      {
+        "id": 95,
+        "name": "Цэвэр Ус (Mineral Water 0.5L)",
+        "category": "drink",
+        "price": 1500,
+        "img": "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=500&q=80",
+        "desc": "Байгалийн цэвэр савласан ус"
+      },
+      {
+        "id": 96,
+        "name": "Капучино Кофе",
+        "category": "drink",
+        "price": 6500,
+        "img": "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80",
+        "desc": "Өтгөн сүүн хөөстэй капучино"
+      },
+      {
+        "id": 97,
+        "name": "Мача Латте (Matcha Green Tea)",
+        "category": "drink",
+        "price": 7500,
+        "img": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=500&q=80",
+        "desc": "Япон ногоон цайтай сүүн латте"
+      },
+      {
+        "id": 98,
+        "name": "Карамель Маккиато",
+        "category": "drink",
+        "price": 7500,
+        "img": "https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=500&q=80",
+        "desc": "Карамель сироптой эспрессо кофе"
+      },
+      {
+        "id": 99,
+        "name": "Жүржийн Шинэхэн Шүүс (Orange Juice)",
+        "category": "drink",
+        "price": 6900,
+        "img": "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=500&q=80",
+        "desc": "Шинээр шахсан 100% жүржийн шүүс"
+      },
+      {
+        "id": 100,
+        "name": "Ред Булл (Red Bull 0.25L)",
+        "category": "drink",
+        "price": 6500,
+        "img": "https://images.unsplash.com/photo-1527960471264-932f39eb5846?auto=format&fit=crop&w=500&q=80",
+        "desc": "Эрчим хүчний ундаа"
+      }
+    ];
 
     let cart = [];
     let activeCategory = 'all';
 
+    document.addEventListener('DOMContentLoaded', () => {
+      renderFoods(foods);
+    });
+
     function renderFoods(items) {
       const grid = document.getElementById('food-grid');
+      if (!grid) return;
       grid.innerHTML = '';
-      if(items.length === 0) {
+      if (items.length === 0) {
         grid.innerHTML = `<p class="col-span-full text-center text-gray-500 py-10">Хоол олдсонгүй.</p>`;
         return;
       }
@@ -987,10 +990,12 @@
         btn.classList.remove('bg-red-600', 'text-white');
         btn.classList.add('bg-white', 'text-gray-700');
       });
-      event.target.classList.remove('bg-white', 'text-gray-700');
-      event.target.classList.add('bg-red-600', 'text-white');
+      if (window.event && window.event.target) {
+        window.event.target.classList.remove('bg-white', 'text-gray-700');
+        window.event.target.classList.add('bg-red-600', 'text-white');
+      }
 
-      if(cat === 'all') renderFoods(foods);
+      if (cat === 'all') renderFoods(foods);
       else renderFoods(foods.filter(item => item.category === cat));
     }
 
@@ -1005,7 +1010,7 @@
 
     function addToCart(foodId) {
       const existing = cart.find(item => item.id === foodId);
-      if(existing) existing.qty += 1;
+      if (existing) existing.qty += 1;
       else {
         const item = foods.find(f => f.id === foodId);
         cart.push({ ...item, qty: 1 });
@@ -1014,55 +1019,73 @@
     }
 
     function updateCartUI() {
-      document.getElementById('cart-count').innerText = cart.reduce((sum, item) => sum + item.qty, 0);
+      const cartCountEl = document.getElementById('cart-count');
+      if (cartCountEl) cartCountEl.innerText = cart.reduce((sum, item) => sum + item.qty, 0);
+      
       const cartItemsContainer = document.getElementById('cart-items');
-      if(cart.length === 0) {
-        cartItemsContainer.innerHTML = `<p class="text-gray-500 text-center py-8">Сагс хоосон байна.</p>`;
-      } else {
-        cartItemsContainer.innerHTML = '';
-        cart.forEach(item => {
-          cartItemsContainer.innerHTML += `
-            <div class="flex items-center justify-between py-4">
-              <div class="flex items-center gap-3">
-                <img src="${item.img}" class="w-12 h-12 rounded-lg object-cover">
-                <div>
-                  <h4 class="font-bold text-sm">${item.name}</h4>
-                  <p class="text-xs text-gray-500">${item.price.toLocaleString()} ₮</p>
+      if (cartItemsContainer) {
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = `<p class="text-gray-500 text-center py-8">Сагс хоосон байна.</p>`;
+        } else {
+          cartItemsContainer.innerHTML = '';
+          cart.forEach(item => {
+            cartItemsContainer.innerHTML += `
+              <div class="flex items-center justify-between py-4">
+                <div class="flex items-center gap-3">
+                  <img src="${item.img}" class="w-12 h-12 rounded-lg object-cover">
+                  <div>
+                    <h4 class="font-bold text-sm">${item.name}</h4>
+                    <p class="text-xs text-gray-500">${item.price.toLocaleString()} ₮</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="changeQty(${item.id}, -1)" class="w-7 h-7 bg-gray-100 rounded-full font-bold hover:bg-gray-200">-</button>
+                  <span class="font-bold text-sm w-4 text-center">${item.qty}</span>
+                  <button onclick="changeQty(${item.id}, 1)" class="w-7 h-7 bg-gray-100 rounded-full font-bold hover:bg-gray-200">+</button>
                 </div>
               </div>
-              <div class="flex items-center gap-2">
-                <button onclick="changeQty(${item.id}, -1)" class="w-7 h-7 bg-gray-100 rounded-full font-bold hover:bg-gray-200">-</button>
-                <span class="font-bold text-sm w-4 text-center">${item.qty}</span>
-                <button onclick="changeQty(${item.id}, 1)" class="w-7 h-7 bg-gray-100 rounded-full font-bold hover:bg-gray-200">+</button>
-              </div>
-            </div>
-          `;
-        });
+            `;
+          });
+        }
       }
 
       const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
       const deliveryFee = subtotal > 0 ? 4000 : 0;
-      document.getElementById('subtotal-price').innerText = `${subtotal.toLocaleString()} ₮`;
-      document.getElementById('delivery-fee').innerText = `${deliveryFee.toLocaleString()} ₮`;
-      document.getElementById('total-price').innerText = `${(subtotal + deliveryFee).toLocaleString()} ₮`;
+      
+      if (document.getElementById('subtotal-price'))
+        document.getElementById('subtotal-price').innerText = `${subtotal.toLocaleString()} ₮`;
+      if (document.getElementById('delivery-fee'))
+        document.getElementById('delivery-fee').innerText = `${deliveryFee.toLocaleString()} ₮`;
+      if (document.getElementById('total-price'))
+        document.getElementById('total-price').innerText = `${(subtotal + deliveryFee).toLocaleString()} ₮`;
     }
 
     function changeQty(foodId, change) {
       const item = cart.find(i => i.id === foodId);
-      if(item) {
+      if (item) {
         item.qty += change;
-        if(item.qty <= 0) cart = cart.filter(i => i.id !== foodId);
+        if (item.qty <= 0) cart = cart.filter(i => i.id !== foodId);
       }
       updateCartUI();
     }
 
-    function toggleCart() { document.getElementById('cart-modal').classList.toggle('hidden'); }
-    function openCheckout() {
-      if(cart.length === 0) { alert('Сагс хоосон байна!'); return; }
-      toggleCart();
-      document.getElementById('checkout-modal').classList.remove('hidden');
+    function toggleCart() {
+      const modal = document.getElementById('cart-modal');
+      if (modal) modal.classList.toggle('hidden');
     }
-    function closeCheckout() { document.getElementById('checkout-modal').classList.add('hidden'); }
+
+    function openCheckout() {
+      if (cart.length === 0) { alert('Сагс хоосон байна!'); return; }
+      toggleCart();
+      const checkoutModal = document.getElementById('checkout-modal');
+      if (checkoutModal) checkoutModal.classList.remove('hidden');
+    }
+
+    function closeCheckout() {
+      const checkoutModal = document.getElementById('checkout-modal');
+      if (checkoutModal) checkoutModal.classList.add('hidden');
+    }
+
     function handleOrderSubmit(e) {
       e.preventDefault();
       alert('Захиалга амжилттай хийгдлээ!');
@@ -1070,9 +1093,6 @@
       updateCartUI();
       closeCheckout();
     }
-
-    // Initial Load
-    renderFoods(foods);
   </script>
 </body>
 </html>
